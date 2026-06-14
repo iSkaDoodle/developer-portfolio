@@ -9,23 +9,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/image/favico.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-logo"><a href="#">Daniel.</a></div>
+    <header class="header">
+        <a href="#intro" class="logo"><span>Daniel.</span></a>
         <h5>basilandj@gmail.com</h5>
         <ul class="nav-links">
-            <li><a href="#" class="#" id="#">Education</a></li>
-            <li><a href="#" class="#" id="#">Project</a></li>
-            <li><a href="#" class="#" id="#">About</a></li>
-            <li><a href="#" class="#" id="#">Contact</a></li>
+            <li><a href="#" class="#education">Education</a></li>
+            <li><a href="#" class="#project">Project</a></li>
+            <li><a href="#" class="#about">About</a></li>
+            <li><a href="#" class="#contact">Contact</a></li>
         </ul>
-    </nav>
-    <div class="intro">
-        <h3 class="mail">Hello! I'm</h3>
-        <h1 class="name">Daniel John</h1>
-    </div>
+    </header>
+
+    <section id="intro" class="intro">
+        <div class="intro-container">
+            <img src="assets/image/me.webp" alt="profile">
+
+            <div class="intro-info">
+
+                <div class="info-text">
+                    <h3>Hello! I'm</h3>
+                    <h1>Daniel John</h1>
+                    <span>Under Graduate Aspiring Web Developer turning designs into code.</span>
+                </div>
+            
+            
+                <div class="skill-group">
+                    <ul class="skills">
+                    <li><h6>HTML5</h6></li>
+                    <li><h6>CSS</h6></li>
+                    <li><h6>NOSQL</h6></li>
+                    <li><h6>MYSQL</h6></li>
+                    <li><h6>APP DEV</h6></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
