@@ -1,10 +1,10 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #f5f5f5;
-  --alt-text-color: #4f616f;
+  --alt-text-color: #aeb9c2;
   --font-sans: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
   --line-height-base: 1.6;
-  --text-hover: #0a0a0a;
+  --text-hover: #00d2ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    overflow-y: auto;
+    font-size: 1rem;
     width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
@@ -37,11 +37,9 @@ body {
     color: var(--text-color);
     font-family: var(--font-sans);
     line-height: var(--line-height-base);
-    
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     
     display: flex;
@@ -50,24 +48,26 @@ body {
 }
 
 h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
     color: var(--text-color);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 h5 {
   color: var(--text-color);
-  transform: scale(0.95);
+  opacity: 0.9;
+  letter-spacing: 2px;
 }
-
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -82,7 +82,9 @@ h5 {
 }
 
 .nav-links li{
-    pad: 0 15px;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 .nav-links{
@@ -97,7 +99,7 @@ h5 {
     color: var(--text-color);
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3 ease;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover{
@@ -115,10 +117,37 @@ img, picture, video, canvas, svg {
 }
 
 .intro{
-  padding-left: 40px;
-  padding-top: 167px;
+  padding: 10vh 5% 2rem 5%;
+  max-width: 1200px;
 }
 
 .name {
   color: var(--alt-text-color);
+}
+
+@media (max-width: 1024px) {
+    .intro {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links */
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .intro {
+        padding-top: 50px;
+        text-align: center;
+    }
 }
