@@ -578,14 +578,3 @@ section {
     .app-title { font-size: 38px; flex-direction: row; gap: 10px; justify-content: center; }
     .socials { align-items: center; }
 }
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
