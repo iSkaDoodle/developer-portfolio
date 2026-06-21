@@ -97,6 +97,14 @@ h5 {
     align-items: center;
 }
 
+.nav-links li a i {
+    display: none !important;
+}
+
+.nav-links li a span {
+    display: inline-block;
+}
+
 .nav-links li a:hover {
     color: var(--text-hover);
 }
@@ -121,6 +129,21 @@ section {
     min-height: 100vh;
     padding: 8rem 8%;
     width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--text-hover);
+    margin: 10px auto;
+    border-radius: 2px;
 }
 
 #intro {
@@ -203,19 +226,65 @@ section {
     color: var(--text-hover);
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 4rem;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: var(--text-hover);
-    margin: 10px auto;
-    border-radius: 2px;
+.project-card {
+    background: #3e3e3e;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-img {
+    height: 200px;
+    background: #2a2a2a;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.project-card:hover .project-img img {
+    opacity: 1;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    color: var(--text-hover);
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--text-hover);
+    padding: 4px 10px;
+    border-radius: 5px;
 }
 
 .education-container {
@@ -246,51 +315,11 @@ section {
     margin-bottom: 0.5rem;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: #3e3e3e;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.project-img {
-    height: 200px;
-    background: #2a2a2a;
-}
-
-.project-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-}
-
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.project-tags span {
-    font-size: 0.7rem;
-    background: rgba(0, 210, 255, 0.1);
-    color: var(--text-hover);
-    padding: 4px 10px;
-    border-radius: 5px;
+.edu-desc {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--alt-text-color);
 }
 
 .about-container {
@@ -314,6 +343,13 @@ section {
     display: flex;
     gap: 3rem;
     margin-top: 2rem;
+}
+
+.stat-item p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--alt-text-color);
 }
 
 #contact {
@@ -341,8 +377,8 @@ section {
     display: block;
     position: absolute;
     top: 0;
-    left: 20px;
-    right: 20px;
+    left: 0;
+    right: 0;
     bottom: 0;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -375,13 +411,28 @@ section {
 .screen-header-button.maximize { background: #e8e925; }
 .screen-header-button.minimize { background: #74c54f; }
 
+.screen-header-right {
+    display: flex;
+}
+
+.screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+}
+
 .screen-body {
     display: flex;
+    min-height: 400px;
 }
 
 .screen-body-item {
     flex: 1;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .screen-body-item.left {
@@ -403,12 +454,12 @@ section {
 }
 
 .app-contact {
-    margin-top: 10px; 
+    margin-top: 10px;
     font-size: 12px;
     color: #888;
-    display: flex;       
+    display: flex;
     align-items: center;
-    gap: 8px;  
+    gap: 8px;
 }
 
 .app-contact i {
@@ -422,18 +473,52 @@ section {
     margin-top: auto;
 }
 
+.app-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .app-form-group {
     margin-bottom: 15px;
 }
 
-/*.app-form-group.message {
-    margin-top: 40px;
-}
-*/
-
 .app-form-group.buttons {
-    margin-bottom: 0;
+    margin-top: auto;
+    transform: translateY(10px);
     text-align: right;
+}
+
+.phone-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.country-code {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    padding: 10px 5px;
+    outline: none;
+    min-width: 100px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.country-code:focus {
+    border-bottom-color: #ddd;
+}
+
+.country-code option {
+    background: #3e3e3e;
+    color: white;
+}
+
+.phone-input {
+    flex: 1;
 }
 
 .app-form-control {
@@ -444,14 +529,20 @@ section {
     border-bottom: 1px solid #666;
     color: #ddd;
     font-size: 14px;
+    font-family: inherit;
     text-transform: uppercase;
     outline: none;
     transition: border-color 0.2s;
-    overflow: hidden;
+    resize: none;
 }
 
-textarea{
-    field-sizing: content;
+.app-form-group.message {
+    flex: 1;
+}
+
+textarea.app-form-control {
+    min-height: 120px;
+    resize: vertical;
 }
 
 .app-form-control::placeholder {
@@ -468,6 +559,7 @@ textarea{
     border: none;
     color: var(--text-color);
     font-size: 14px;
+    font-family: inherit;
     cursor: pointer;
     outline: none;
     transition: color 0.3s ease;
@@ -496,6 +588,7 @@ textarea{
     align-items: center;
     color: #fff;
     font-weight: bold;
+    margin-left: 5px;
 }
 
 .dribbble {
@@ -560,20 +653,120 @@ textarea{
 }
 
 @media (max-width: 768px) {
-    .header { width: 95%; gap: 1.5rem; justify-content: space-between; padding: 0.6rem 1.2rem; }
-    .header h5 { display: none; }
-    .nav-links span { display: none; }
-    .nav-links i { display: inline-block; }
-    .intro-container { flex-direction: column; text-align: center; }
-    .intro-info { align-items: center; }
-    .screen-body { flex-direction: column; }
-    .screen-body-item { padding: 30px; }
-    .app-title { font-size: 38px; flex-direction: row; gap: 10px; justify-content: center; }
-    .socials { align-items: center; width: 100%; }
+    .header {
+        width: 95%;
+        gap: 1.5rem;
+        justify-content: space-between;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .header h5 {
+        display: none;
+    }
+
+    .nav-links li a span {
+        display: none !important;
+    }
+
+    .nav-links li a i {
+        display: inline-block !important;
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links li a::before {
+        bottom: -8px;
+    }
+
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #intro img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .intro-info {
+        align-items: center;
+    }
+
+    .intro-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .screen-body {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+
+    .app-title {
+        font-size: 38px;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .app-form-group.buttons {
+        margin-top: 20px;
+    }
+
+    .socials {
+        align-items: center;
+        width: 100%;
+    }
+
+    .about-container {
+        padding: 1.5rem;
+    }
+
+    .about-stats {
+        gap: 1.5rem;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
-    .header { gap: 1rem; }
-    .nav-links { gap: 1.2rem; }
-    .logo { font-size: 1.1rem; }
+    .header {
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    #intro img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .intro-info h1 {
+        font-size: 2rem;
+    }
+
+    .phone-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .country-code {
+        width: 100%;
+    }
 }

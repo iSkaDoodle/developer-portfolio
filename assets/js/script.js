@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.intro-container, .project-card, .edu-card, .about-container, .screen, .social-icons');
-    
+
+    const revealElements = document.querySelectorAll(
+        '.intro-container, .project-card, .edu-card, .about-container, .screen, .social-icons'
+    );
+
     revealElements.forEach(el => el.classList.add('reveal'));
 
     const observer = new IntersectionObserver((entries) => {
@@ -19,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
+
             if (href.startsWith('#')) {
                 e.preventDefault();
+
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
 
@@ -36,6 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 });
-
-
