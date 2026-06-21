@@ -10,21 +10,17 @@
     <link rel="shortcut icon" href="assets/image/favico.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/b516ac2ac2.js" crossorigin="anonymous"></script>
-    <script src="js/script.js" defer></script>
+    <script type="module" src="assets/js/script.js" defer></script>
+    <script type="module" src="assets/js/firebase.js"></script>
 </head>
 <body>
     <header class="header">
         <a href="#intro" class="logo"><span>Daniel.</span></a>
         <h5>basilandj@gmail.com</h5>
         <ul class="nav-links">
-            <li>
-                <a href="#project">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <span>Project</span>
-                </a>
-            </li>
-<li><a href="#education"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a></li>
-<li><a href="#about"><i class="fa-solid fa-user"></i><span>About</span></a></li>
+            <li><a href="#project"><i class="fa-solid fa-briefcase"></i><span>Project</span></a></li>
+            <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a></li>
+            <li><a href="#about"><i class="fa-solid fa-user"></i><span>About</span></a></li>
             <li><a href="#contact"><i class="fa-solid fa-phone"></i><span>Contact</span></a></li>
         </ul> 
     </header>
@@ -157,13 +153,13 @@
                         </div>
                         <div class="screen-body-item">
                             <div class="app-form">
-                                <div class="app-form-group"><input class="app-form-control" placeholder="NAME"></div>
-                                <div class="app-form-group"><input class="app-form-control" placeholder="EMAIL"></div>
-                                <div class="app-form-group"><input class="app-form-control" placeholder="CONTACT NO."></div>
-                                <div class="app-form-group message"><input class="app-form-control" placeholder="Tell me about it.."></div>
+                                <div class="app-form-group"><input id="name" type="text" class="app-form-control" placeholder="NAME"></div>
+                                <div class="app-form-group"><input id="email" type="email" class="app-form-control" placeholder="EMAIL"></div>
+                                <div class="app-form-group"><input id="contactNo" type="tel" class="app-form-control" placeholder="CONTACT NO."></div>
+                                <textarea id="message" placeholder="TELL ME ABOUT IT..." class="app-form-control"></textarea>
                                 <div class="app-form-group buttons">
                                     <button class="app-form-button-cancel">CANCEL</button>
-                                    <button class="app-form-button">SEND</button>
+                                    <button class="app-form-button" id="sendBtn">SEND</button>
                                 </div>
                             </div>
                         </div>

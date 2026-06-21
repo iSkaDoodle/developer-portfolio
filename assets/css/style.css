@@ -426,9 +426,10 @@ section {
     margin-bottom: 15px;
 }
 
-.app-form-group.message {
+/*.app-form-group.message {
     margin-top: 40px;
 }
+*/
 
 .app-form-group.buttons {
     margin-bottom: 0;
@@ -446,6 +447,11 @@ section {
     text-transform: uppercase;
     outline: none;
     transition: border-color 0.2s;
+    overflow: hidden;
+}
+
+textarea{
+    field-sizing: content;
 }
 
 .app-form-control::placeholder {
