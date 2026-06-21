@@ -529,11 +529,7 @@ section {
     border-bottom: 1px solid #666;
     color: #ddd;
     font-size: 14px;
-    font-family: inherit;
-    text-transform: uppercase;
     outline: none;
-    transition: border-color 0.2s;
-    resize: none;
 }
 
 .app-form-group.message {
@@ -541,11 +537,13 @@ section {
 }
 
 textarea.app-form-control {
-    min-height: 120px;
     resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
 }
 
 .app-form-control::placeholder {
+    text-transform: uppercase;
     color: #666;
 }
 
