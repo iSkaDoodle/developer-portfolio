@@ -10,14 +10,7 @@ import {
 from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyADVjgAVyn81CjwsI73F_208n2dHM-3s04",
-  authDomain: "portfolio-req.firebaseapp.com",
-  projectId: "portfolio-req",
-  storageBucket: "portfolio-req.firebasestorage.app",
-  messagingSenderId: "665132543178",
-  appId: "1:665132543178:web:afe5bd19b22152b4a6d833",
-  measurementId: "G-80Y0G09SS0"
+
 };
 
 const app = initializeApp(firebaseConfig);
